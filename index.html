@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Calculate the areas of Ellipse, Circle, Triangle and rectangle with JavaScript</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script type="text/javascript" src="include.js"></script>
+    <script type="text/javascript" src="util.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $("#lbl1, #lbl2, #lblResult, #btnSubmit").hide();
+      });
+    </script>
+
+  </head>
+  <body bgcolor="#ffffff">
+
+
+      <div class="container">
+      <br>
+        <div class="panel panel-primary">
+          <div class="panel-heading">Calculate the areas of shapes</div>
+          <div class="panel-body">
+
+              <p> 
+                <select id="strShape" class="form-control" style="width: auto;margin:10px;">
+                  <option>Select Shape</option>
+                  <option value="Circle">Circle</option>
+                  <option value="Square">Square</option>
+                  <option value="Rectangle">Rectangle</option>
+                  <option value="Ellipse">Ellipse</option>      
+                </select>
+              </p>
+
+              <p style="height:50px;margin-left:20px;" >  
+                <br>   
+                <span id="lbl1"></span> 
+                <span id="lbl2"></span>
+                <br>
+                <span id="lblResult"></span>
+              </p>
+
+          </div>
+
+          <h2 style="color:#336699;margin-left:20px;">Statistics</h2>
+          
+          <table class="table table-responsive" style="width:80%;margin-left:20px;">
+            <thead>
+              <tr>        
+                <th>Shape</th>
+                <th># of times area counted</th>
+                <th>Medium value</th>
+                <th>latest</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Circle</td>
+                <td><p id="count1">0</p></td>
+                <td><p id="circleMedVal"></td>
+                <td><p id="circleArea"></p></td>
+              </tr>
+              <tr>
+                <td>Square</td>
+                <td><p id="count2">0</p></td>
+                <td><p id="squareMedVal"></td>
+                <td><p id="squareArea"></p></td>        
+              </tr>
+              <tr>
+                <td>Rectangle</td>
+                <td><p id="count3">0</p></td>
+                <td><p id="rectangleMedVal"></td>
+                <td><p id="rectangleArea"></p></td>
+              </tr>
+              <tr>
+                <td>Ellipse</td>
+                <td><p id="count4">0</p></td>
+                <td><p id="ellipseMedVal"></td>
+                <td><p id="ellipseArea"></p></td>
+              </tr>      
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    <script>
+      $( "select" ).change( getAreaofSelectedShape );
+      getAreaofSelectedShape();
+    </script>    
+
+  </body>
+</html>
